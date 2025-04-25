@@ -18,7 +18,7 @@
     "start": "node dist/cli.js",
     "start:cli": "cross-env NODE_ENV=cli node dist/cli.js",
     "start:http": "node dist/cli.js",
-    "dev": "cross-env NODE_ENV=development tsup --watch",
+    "dev": "cp .env.example .env.local cross-env NODE_ENV=development tsup --watch ",
     "dev:cli": "cross-env NODE_ENV=development tsup --watch -- --stdio",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
