@@ -1,12 +1,15 @@
 FROM node:18.17.1
 
-WORKDIR ./
+WORKDIR /app
 COPY package.json package-lock.json ./
 
-COPY . .
 RUN npm ci
 
-#ARG NODE_ENV
+COPY . .
+
+# Build the application
+RUN npm run build
+
 ARG FIGMA_API_KEY
 ARG PORT
 
@@ -15,4 +18,4 @@ ENV PORT ${PORT}
 
 EXPOSE ${PORT}
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
