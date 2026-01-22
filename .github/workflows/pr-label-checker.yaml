@@ -1,4 +1,4 @@
-name: Label PR 
+name: Validate PR Label
 
 on:
   pull_request:
