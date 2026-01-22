@@ -3,6 +3,7 @@ name: Validate PR Label
 on:
   pull_request:
     types: [ edited , labeled, unlabeled ]
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   checker:
