@@ -1,0 +1,12 @@
+name: Label PR 
+
+on:
+  pull_request:
+    types: [ edited ]
+
+jobs:
+  checker:
+    uses: WeyeTech/github-actions/.github/workflows/label-pr-actions.yaml@master
+    with:
+      pr_title: ${{ github.event.pull_request.title }}
+    secrets: inherit
